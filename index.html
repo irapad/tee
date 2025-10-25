@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบจองสนามแบดมินตัน</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏸 ระบบจองสนามแบดมินตัน</h1>
+            <p>จองสนามได้ง่ายๆ เพียงไม่กี่คลิก</p>
+        </header>
+
+        <main>
+            <div class="booking-section">
+                <h2>จองสนาม</h2>
+                <form id="bookingForm">
+                    <div class="form-group">
+                        <label for="courtSelect">เลือกสนาม:</label>
+                        <select id="courtSelect" required>
+                            <option value="">-- เลือกสนาม --</option>
+                            <option value="court1">สนาม 1</option>
+                            <option value="court2">สนาม 2</option>
+                            <option value="court3">สนาม 3</option>
+                            <option value="court4">สนาม 4</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dateInput">วันที่:</label>
+                        <input type="date" id="dateInput" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="timeSelect">เวลา:</label>
+                        <select id="timeSelect" required>
+                            <option value="">-- เลือกเวลา --</option>
+                            <option value="08:00">08:00 - 09:00</option>
+                            <option value="09:00">09:00 - 10:00</option>
+                            <option value="10:00">10:00 - 11:00</option>
+                            <option value="11:00">11:00 - 12:00</option>
+                            <option value="12:00">12:00 - 13:00</option>
+                            <option value="13:00">13:00 - 14:00</option>
+                            <option value="14:00">14:00 - 15:00</option>
+                            <option value="15:00">15:00 - 16:00</option>
+                            <option value="16:00">16:00 - 17:00</option>
+                            <option value="17:00">17:00 - 18:00</option>
+                            <option value="18:00">18:00 - 19:00</option>
+                            <option value="19:00">19:00 - 20:00</option>
+                            <option value="20:00">20:00 - 21:00</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="nameInput">ชื่อผู้จอง:</label>
+                        <input type="text" id="nameInput" placeholder="กรอกชื่อของคุณ" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneInput">เบอร์โทรศัพท์:</label>
+                        <input type="tel" id="phoneInput" placeholder="0xx-xxx-xxxx" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary">จองสนาม</button>
+                </form>
+            </div>
+
+            <div class="bookings-section">
+                <h2>รายการจอง</h2>
+                <div class="filter-section">
+                    <label for="filterDate">กรองตามวันที่:</label>
+                    <input type="date" id="filterDate">
+                    <button id="clearFilter" class="btn-secondary">แสดงทั้งหมด</button>
+                </div>
+                <div id="bookingsList" class="bookings-list">
+                    <p class="no-bookings">ยังไม่มีการจองสนาม</p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 ระบบจองสนามแบดมินตัน</p>
+        </footer>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle">แจ้งเตือน</h2>
+            <p id="modalMessage"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
